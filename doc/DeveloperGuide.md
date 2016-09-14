@@ -45,8 +45,11 @@ Priority | As a ... | I want to ... | So that I can...
 `* * *` | user | add a new person |
 `* * *` | user | delete a person | remove entries that I no longer need
 `* * *` | user | find a person by name | locate details of persons without having to go through the entire list
+`* * *` | user | update a person | change and modify existing information or incorrect information
 `* *` | user | hide [private contact details](#private-contact-detail) by default | minimize chance of someone else seeing them by accident
 `*` | user with many persons in the address book | sort persons by name | locate a person easily
+`*` | user with many persons in the address book | filter people by tags | locate groups easily
+
 
 
 ## Appendix B : Use Cases
@@ -74,12 +77,38 @@ Use case ends.
 > 3a1. AddressBook shows an error message <br>
   Use case resumes at step 2
 
+#### Use case: Rename person
+
+**MSS**
+
+1. User searches for person to rename
+2. User updates person's information
+3. AddressBook prompts a confirmation; "are you sure?"
+4. User confirms the request
+4. AddressBook rename the tag to new name
+Use case ends.
+
+**Extensions**
+
+2a. The tag chosen by the user does not exist
+
+> 2a1. AddressBook shows an error message 
+> 2a2. AddressBook refer user to step 2
+
+3a. User terminates the confirmation
+
+> Use case ends
+
+
+
 ## Appendix C : Non Functional Requirements
 
 1. Should work on any [mainstream OS](#mainstream-os) as long as it has Java 8 or higher installed.
 2. Should be able to hold up to 1000 persons.
 3. Should come with automated unit tests and open source code.
 4. Should favor DOS style commands over Unix-style commands.
+5. Should offer back up options in case data gets deleted
+6. Should offer a GUI, as CLI are not very user friendly
 
 ## Appendix D : Glossary
 
